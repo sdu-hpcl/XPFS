@@ -1,4 +1,4 @@
-#MPFS
+#XPFS
 
 *  A new method to search PROSITE profile on XEON Phi.
 
