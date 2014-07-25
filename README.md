@@ -9,10 +9,19 @@
 * Query profiles and database are needed to run XPFS. Profiles can be downloaded at [ftp://lausanne.isb-sib.ch/pub/software/unix/pftools/pftoolsV3/pftoolsV3.PROSITE.tar.gz]. And databse should be in FASTA format.
 
 #### Run XPFS 
-  * `./XPFS -t nCpus -T nMics <queryProfile> <database>` 
-  * nCPUs : number of cpu thread; nMICs : number of Xeon Phi cards (Currently only one card supported)
+  * step 1 : Preproccess the database ( Generate database index file )
+
+     `./XPFS -t 1 -T 0 -c <name of database index> <queryProfile> <database>`
+  
+  * step 2 : Do searching
+  
+    `./XPFS -t nCpus -T nMics -i <name of database index> <queryProfile> <database>` 
+
+     nCPUs : number of cpu thread; nMICs : number of Xeon Phi cards (Currently only one card supported)
+  
   * for more details, you can run :
-  * `./XPFS -h`
+    
+     `./XPFS -h`
 
 
 ##Reference
