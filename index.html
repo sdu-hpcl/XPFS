@@ -51,10 +51,22 @@
 
 <ul>
 <li>
-<code>./XPFS -t nCpus -T nMics &lt;queryProfile&gt; &lt;database&gt;</code> </li>
-<li>nCPUs : number of cpu thread; nMICs : number of Xeon Phi cards (Currently only one card supported)</li>
-<li>for more details, you can run :</li>
-<li><code>./XPFS -h</code></li>
+<p>step 1 : Preproccess the database ( Generate database index file )</p>
+
+<p><code>./XPFS -t 1 -T 0 -c &lt;name of database index&gt; &lt;queryProfile&gt; &lt;database&gt;</code></p>
+</li>
+<li>
+<p>step 2 : Do searching</p>
+
+<p><code>./XPFS -t nCpus -T nMics -i &lt;name of database index&gt; &lt;queryProfile&gt; &lt;database&gt;</code> </p>
+
+<p>nCPUs : number of cpu thread; nMICs : number of Xeon Phi cards (Currently only one card supported)</p>
+</li>
+<li>
+<p>for more details, you can run :</p>
+
+<p><code>./XPFS -h</code></p>
+</li>
 </ul><h2>
 <a name="reference" class="anchor" href="#reference"><span class="octicon octicon-link"></span></a>Reference</h2>
 
