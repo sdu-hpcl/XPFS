@@ -1,6 +1,6 @@
 #XPFS
 
-*  A new method to search PROSITE profile on XEON Phi.
+*  A New Parallel PROSITE Profile Search Algorithm on Xeon Phi.
 
 ##Introduction
 * XPFS is a high performance database searching method based on the Intel(R) MIC platform. We have used a two-level parallelization scheme: the thread level coarse-grained and VPU level fine-grained parallelism to implement our algorithm. We gain 3 times faster than PFSearchV3 on the Xeon Phi 7110p.
